@@ -62,4 +62,13 @@ router.post("/:chainId/purchase", async (req, res) => {
   }
 });
 
+router.get("/:chainId/high-scores", async (req, res) => {
+  try {
+    const highScores = await getHighScores(req.params.chainId);
+    res.json({ status: "success", result: highScores });
+  } catch (e: any) {
+    return sendError(res, 400, e);
+  }
+});
+
 export { router };
