@@ -9,7 +9,7 @@
     "predev": "pkgroll",
     "dev": "node dist/server.js",
     "start": "node dist/server.js",
-    "docker:build": "docker build -t ghcr.io/thirdweb-example/tappyfowl-api:latest .",
+    "docker:build": "docker build --platform 'linux/amd64,linux/arm64' -t ghcr.io/thirdweb-example/tappyfowl-api:latest .",
     "docker:run": "docker run --rm -p 3000:3000 ghcr.io/thirdweb-example/tappyfowl-api:latest",
     "docker:push": "docker push ghcr.io/thirdweb-example/tappyfowl-api:latest"
   },
@@ -28,7 +28,8 @@
     "express": "4.19.2",
     "http-errors": "~2.0.0",
     "morgan": "~1.10.0",
-    "viem": "^2.20.0"
+    "viem": "^2.20.0",
+    "memory-cache-node": "^1.4.0"
   },
   "devDependencies": {
     "@thirdweb-dev/engine": "^0.0.12",
